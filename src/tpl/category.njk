@@ -1,0 +1,26 @@
+{% extends "common/_base-layout.njk" %}
+
+{% block content %}
+
+    <div class="container">
+        <ul class="phone-series-gallery list-phone">
+
+            {% for i in range(0, 6)%}
+
+            <li class="item-phone">
+                <span class="item-tag">В наличии</span>
+                <a class="phone-series-preview" href="/item.html">
+                    <img class="phone-preview-lg gallery-img-first" src="/assets/img/one-side-1-compressor.png" alt="image">
+                    <img class="phone-preview-lg gallery-img-second" src="/assets/img/one-side-2-compressor.png" alt="image">
+                </a>
+                <span class="item-title">Oneplus 7 Pro 8GB + 256GB (туманный синий)</span>
+                <span class="item-price">44 000</span>
+                <button class="item-buy-btn">Купить</button>
+            </li>
+
+            {%- endfor %}
+
+        </ul>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,133 @@
+
+/*  Фикс IE11 для прижатия футера к подвалу  */
+html {
+  display: flex;
+  flex-direction: column;
+}
+
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+
+  font-family: "Open Sans", "Arial", sans-serif;
+  font-size: 16px;
+}
+
+
+.promo-wrapper {
+  margin-bottom: 100px;
+  padding-bottom: 10px;
+  background-color: $white-500;
+}
+
+.promo {
+  overflow: hidden; //Нивелируем вытягивание фона через отрицательный margin
+}
+
+.promo-section-title {
+  margin: 0;
+  padding: 20px;
+  font-size: 25px;
+  font-weight: 300;
+  color: $grey;
+}
+
+
+.promo-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -10px;
+  margin-left: -10px;
+}
+
+
+.promo-list__item {
+
+  display: flex;
+  width: calc(100% / 12 * 3 - 20px);
+  min-width: 220px;
+
+  flex-direction: column;
+  margin: 0 10px;
+  padding: 10px 5px 20px;
+
+  color: $black-100;
+  background-color: $white;
+  transition: 0.25s linear;
+
+  &:hover {
+    box-shadow: -3px 4px 14px 3px $grey;
+  }
+
+  &:hover .promo-list__img {
+    transform: scale(1.05);
+  }
+
+  @media (max-width: 999px) {
+    width: calc(100% / 12 * 4 - 20px);
+  }
+
+  @media (max-width: 716px) {
+    width: calc(100% / 12 * 6 - 20px);
+  }
+
+  @media (max-width: 499px) {
+    width: calc(100% - 20px);
+  }
+}
+
+
+.promo-list__tag {
+  align-self: flex-end;
+  margin-bottom: 10px;
+  padding: 3px;
+  color: $white;
+  text-transform: uppercase;
+  background-color: $red-100;
+}
+
+
+.promo-list__link {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+
+.promo-list__img {
+  vertical-align: bottom;
+  transition: 0.3s;
+}
+
+.promo-list__title {
+  margin-bottom: 10px;
+  font-weight: 300;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.promo-list__price {
+
+  margin-top: auto;
+  margin-bottom: 10px;
+  text-align: center;
+
+  &--old {
+    text-decoration: line-through;
+  }
+}
+
+.promo-list__btn {
+  padding: 8px 42px;
+}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,36 @@
+
+.product-attributes {
+
+  padding: 0 5px;
+
+  @media (max-width: $tablet-width) {
+    padding: 0 10px;
+  }
+
+  &__table-title {
+    margin-bottom: 30px;
+    font-size: 25px;
+    font-weight: 500;
+    color: $grey-100;
+
+    @media (max-width: $tablet-width) {
+      text-align: center;
+    }
+  }
+
+  &__table-data {
+    width: 100%;
+    margin-bottom: 15px;
+    border-spacing: 50px 0;
+    border-collapse: separate;
+
+    & td {
+      width: 30%;
+      margin: 0;
+      padding: 10px 0;
+      font-size: 14px;
+      font-weight: 400;
+      border-bottom: 1px solid $white-300;
+    }
+  }
+}

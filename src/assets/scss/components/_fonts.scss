@@ -1,0 +1,48 @@
+
+@font-face {
+  font-family: "Open Sans";
+  src: local("Open Sans");
+  src: url("#{$font_dir}/opensans-regular.eot?#iefix") format("embedded-opentype"),
+  url("#{$font_dir}/opensans-regular.woff") format("woff"),
+  url("#{$font_dir}/opensans-regular.woff") format("woff2"),
+  url("#{$font_dir}/opensans-regular.ttf") format("truetype");
+
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: "Open Sans";
+  src: local("Open Sans");
+  src: url("#{$font_dir}/opensans-bold.eot?#iefix") format("embedded-opentype"),
+  url("#{$font_dir}/opensans-bold.woff") format("woff"),
+  url("#{$font_dir}/opensans-bold.woff") format("woff2"),
+  url("#{$font_dir}/opensans-bold.ttf") format("truetype");
+
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: "Open Sans";
+  src: local("Open Sans");
+  src: url("#{$font_dir}/opensans-light.eot?#iefix") format("embedded-opentype"),
+  url("#{$font_dir}/opensans-light.woff") format("woff"),
+  url("#{$font_dir}/opensans-light.woff") format("woff2"),
+  url("#{$font_dir}/opensans-light.ttf") format("truetype");
+
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
+
+
+
+

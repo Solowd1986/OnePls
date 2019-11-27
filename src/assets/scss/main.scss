@@ -1,0 +1,32 @@
+
+/*  Компоненты  */
+@import "components/normalize";
+@import "components/variables";
+@import "components/mixins";
+@import "components/forms";
+@import "components/modals";
+@import "components/buttons";
+
+@import "components/custom-reset";
+@import "components/fonts";
+@import "components/helpers";
+
+
+/*  Общие стили  */
+@import "blocks/common/header";
+@import "blocks/common/slider";
+@import "blocks/common/promotion-badge";
+@import "blocks/common/footer";
+
+
+/*  Стили отдельных страниц  */
+@import "blocks/pages/index";
+
+
+
+
+
+/*  Стили для сторонних компонентов  */
+
+
+

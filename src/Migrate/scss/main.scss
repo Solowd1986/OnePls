@@ -1,0 +1,36 @@
+
+
+@import "variables";
+@import "inc/fonts";
+@import "inc/helpers";
+@import "mixins";
+@import "inc/common";
+@import "inc/animations";
+
+
+@import "blocks/common/main-page/phone-item";
+@import "blocks/promotion_badge";
+
+
+/*  Общие стили  */
+
+@import "blocks/common/header/header";
+@import "blocks/common/header/nav-categories";
+@import "blocks/common/header/inner-nav-list";
+
+
+@import "blocks/common/slider/slider";
+
+
+
+/*  Стили для страницы отдельного товара  */
+
+@import "blocks/single-product/single-product";
+@import "blocks/single-product/product-order";
+@import "blocks/single-product/product-features";
+@import "blocks/single-product/delivery-rules";
+@import "blocks/single-product/product-attributes";
+
+
+/*  Общие стили. Footer  */
+

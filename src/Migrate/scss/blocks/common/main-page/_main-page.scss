@@ -1,0 +1,19 @@
+
+.main-page__section-title {
+  position: relative;
+  display: block;
+  margin: 0;
+  content: '';
+  padding: 20px;
+  font-size: 25px;
+  font-weight: 300;
+  color: #828282;
+}
+
+
+.main-page__phone-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -10px;
+  margin-right: -10px;
+}

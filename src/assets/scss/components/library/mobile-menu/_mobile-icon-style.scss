@@ -1,0 +1,25 @@
+
+
+.mobile-menu__icon {
+  width: 44px;
+  background-color: transparent;
+}
+.mobile-menu__icon::before, .mobile-menu__icon::after, .mobile-menu__icon span {
+  content: "";
+  display: block;
+  height: 5px;
+  margin: 7px 0;
+  border-radius: 3px;
+  background-color: #000000;
+  transition: all 0.2s ease-in-out;
+}
+
+.mobile-menu__icon--active::before {
+  transform: translateY(12px) rotate(135deg);
+}
+.mobile-menu__icon--active::after {
+  transform: translateY(-12px) rotate(-135deg);
+}
+.mobile-menu__icon--active span {
+  transform: scale(0);
+}
