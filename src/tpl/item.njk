@@ -3,15 +3,18 @@
 
 {% block content %}
 
-    <main class="single-product">
+    {% include "common/_slider.njk" %}
 
-        <section class="single-product__card">
+
+    <section class="product-order-wrapper">
+
             <div class="container product-order">
+
                 <div class="product-order__img-wrapper">
-                    <img class="product-order__img" src="/assets/img/oneplus_bullets_wireless_600_1.png" alt="image">
-                    <div class="product-order__img-sm-slider">
-                        <img width="60" height="60" src="/assets/img/oneplus_bullets_wireless_600_1.png" alt="generic_img">
-                        <img width="60" height="60" src="/assets/img/oneplus_bullets_wireless_600_1.png" alt="generic_img">
+                    <img class="product-order__img" src="/src/assets/img/single-product/accessoires/oneplus_bullets_wireless/oneplus_bullets_wireless_600_1.png" alt="image">
+                    <div class="product-order__slider">
+                        <img width="60" height="60" src="/src/assets/img/single-product/accessoires/oneplus_bullets_wireless/oneplus_bullets_wireless_600_1.png" alt="generic_img">
+                        <img width="60" height="60" src="/src/assets/img/single-product/accessoires/oneplus_bullets_wireless/oneplus_bullets_wireless_600_1.png" alt="generic_img">
                     </div>
                 </div>
                 <div class="product-order__info-wrapper">
@@ -27,23 +30,28 @@
                     <span class="product-order__availability">Наличие: В наличии</span>
                 </div>
             </div>
-        </section>
+    </section>
 
-        <section class="single-product__info">
 
-            <nav class="container product-features__nav">
-                <a class="product-features__nav-link product-features__nav-link--active" id="#tab-features" href="">Описание</a>
-                <a class="product-features__nav-link" href="#tab-delivery">Характеристики</a>
-                <a class="product-features__nav-link" href="#tab-attributes">Доставка и оплата</a>
+
+
+
+        <section class="container product-info">
+
+            <nav class="product-info__nav">
+                <a class="product-info__nav-link product-info__nav-link--active" id="#tab-features" href="">Описание</a>
+                <a class="product-info__nav-link" href="#tab-delivery">Характеристики</a>
+                <a class="product-info__nav-link" href="#tab-attributes">Доставка и оплата</a>
             </nav>
 
-            <div class="container product-features" id="tab-features">
+
+            <div class="product-features" id="tab-features">
                 <div class="product-features__wrapper">
                     <h2 class="product-features__title">Освободите свою музыку</h2>
                     <p class="product-features__desc">
                         Откройте для себя мягкие высокие частоты и низкие басы, которые вы никогда не слышали раньше, благодаря новым и улучшенным аудио технологиям в наушниках OnePlus Bullets Wireless.
                     </p>
-                    <img class="" src="/OnePlus/img/single-product/accessoires/oneplus_bullets_wireless/oneplus_bullets_wireless_600_1.jpg" alt="img">
+                    <img class="product-features__img" src="/src/assets/img/single-product/accessoires/oneplus_bullets_wireless/oneplus_bullets_wireless_600_1.png " alt="img">
                 </div>
 
                 <div class="product-features__wrapper">
@@ -51,7 +59,7 @@
                     <p class="product-features__desc">
                         С двумя сбалансированными арматурными драйверами и одним 10-миллиметровым динамическим драйвером в каждом наушнике вам гарантировано превосходное качество прослушивания при каждом нажатии кнопки воспроизведения.
                     </p>
-                    <img class="" src="/OnePlus/img/single-product/accessoires/oneplus_bullets_wireless/oneplus_bullets_wireless_600_3.jpg" alt="img">
+                    <img class="product-features__img" src="/src/assets/img/single-product/accessoires/oneplus_bullets_wireless/oneplus_bullets_wireless_600_3.jpg" alt="img">
 
                 </div>
 
@@ -61,12 +69,11 @@
                         Вы с легкостью можете приостановить воспроизведение музыки. Просто соедините наушники вместе и благодаря магнитному креплению они выключатся автоматически. Когда вы решите возобновить воспроизведение музыки, просто разделите их. Это очень просто!
                     </p>
 
-                    <img class="" src="/OnePlus/img/single-product/accessoires/oneplus_bullets_wireless/oneplus_bullets_wireless_600_2.jpg" alt="img">
-
+                    <img class="product-features__img" src="/src/assets/img/single-product/accessoires/oneplus_bullets_wireless/oneplus_bullets_wireless_600_2.jpg" alt="img">
                 </div>
             </div>
 
-            <div class="container delivery-rules" id="tab-delivery">
+            <div class="delivery-rules" id="tab-delivery">
 
                 <h2 class="delivery-rules__shipping-title">Доставка</h2>
                 <h3 class="delivery-rules__shipping-city">Доставка по Москве</h3>
@@ -80,7 +87,7 @@
                 <p class="delivery-rules__payment-options">WebMoney, Яндекс.Деньги, QIWI</p>
             </div>
 
-            <div class="container product-attributes" id="tab-attributes">
+            <div class="product-attributes" id="tab-attributes">
 
                 <h2 class="product-attributes__table-title">Общие характеристики</h2>
 
@@ -165,9 +172,7 @@
             </div>
         </section>
 
-        {% include "common/_promotion_badge.njk" %}
-
-    </main>
+    {% include "common/_promotion_badge.njk" %}
 
 
 {% endblock %}
