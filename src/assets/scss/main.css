@@ -475,6 +475,7 @@ fieldset {
 .header__nav-list {
   display: flex;
   flex-grow: 1;
+  justify-content: space-around;
   justify-content: space-evenly; }
 
 .header__nav-item:hover .header__nav-link--arrow::after {
@@ -605,6 +606,7 @@ fieldset {
 .footer {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
   justify-content: space-evenly;
   align-items: center; }
 
@@ -681,6 +683,7 @@ body {
   flex-direction: column;
   margin: 0 10px;
   padding: 10px 5px 20px;
+  overflow-x: hidden;
   color: #101920;
   background-color: #ffffff;
   transition: 0.25s linear; }
@@ -706,8 +709,8 @@ body {
   text-transform: uppercase;
   background-color: #ff0000; }
   .promo-list__tag--not-in-stock {
-    background-color: #828282;
-    text-decoration: line-through; }
+    text-decoration: line-through;
+    background-color: #828282; }
 
 .promo-list__link {
   margin-bottom: 10px;
@@ -719,6 +722,8 @@ body {
 
 .promo-list__title {
   margin-bottom: 10px;
+  padding: 0 15px;
+  font-size: 14px;
   font-weight: 300;
   line-height: 1.7;
   text-align: center; }
@@ -726,8 +731,14 @@ body {
 .promo-list__price {
   margin-top: auto;
   margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.7;
   text-align: center; }
   .promo-list__price--old {
+    margin-right: 10px;
+    font-size: 15px;
+    color: #828282;
     text-decoration: line-through; }
 
 .promo-list__btn {
