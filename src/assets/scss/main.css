@@ -416,8 +416,7 @@ fieldset {
   src: local("Open Sans");
   src: url("/src/assets/fonts/opensans-regular.eot?#iefix") format("embedded-opentype"), url("/src/assets/fonts/opensans-regular.woff") format("woff"), url("/src/assets/fonts/opensans-regular.woff") format("woff2"), url("/src/assets/fonts/opensans-regular.ttf") format("truetype");
   font-weight: normal;
-  font-style: normal;
-  font-display: swap; }
+  font-style: normal; }
 @font-face {
   font-family: "Open Sans";
   src: local("Open Sans");
@@ -702,10 +701,13 @@ body {
 .promo-list__tag {
   align-self: flex-end;
   margin-bottom: 10px;
-  padding: 3px;
+  padding: 5px 10px;
   color: #ffffff;
   text-transform: uppercase;
   background-color: #ff0000; }
+  .promo-list__tag--not-in-stock {
+    background-color: #828282;
+    text-decoration: line-through; }
 
 .promo-list__link {
   margin-bottom: 10px;
