@@ -1,12 +1,34 @@
 
 
 .header {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px;
 }
 
+.portfolio-controls {
+  position: absolute;
+  z-index: 1;
+  font-size: 13px;
+  text-transform: uppercase;
+  color: $grey-100;
+
+  &:hover {
+    color: darken($grey-100, 30%);
+  }
+}
+
+.portfolio-controls__left {
+  top: 20px;
+  left: 20px;
+}
+
+.portfolio-controls__right {
+  top: 20px;
+  right: 20px;
+}
 
 
 

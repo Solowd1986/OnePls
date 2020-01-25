@@ -21,11 +21,18 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
+
+    <link rel="stylesheet" href="/src/assets/scss/vendor/owl.theme.default.css">
+    <link rel="stylesheet" href="/src/assets/scss/vendor/owl.carousel.css">
+    <link rel="stylesheet" href="/src/assets/scss/vendor/animate-for-owl-carousel.css">
     <link rel="stylesheet" href="/src/assets/scss/main.css">
+
     <script src="/src/assets/js/vendor/jquery-3.4.1.js"></script>
-    <script src="/src/assets/js/main.js" defer></script>
+
 </head>
 <body>
+
+    {% include "common/_portfolio_controls.njk" %}
 
     {% include "common/_header.njk" %}
 
@@ -35,5 +42,8 @@
 
     {% include "common/_sprite.njk" %}
 
+
+    <script src="/src/assets/js/vendor/owl.carousel.js"></script>
+    <script src="/src/assets/js/main.js"></script>
 </body>
 </html>

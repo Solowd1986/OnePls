@@ -70,6 +70,7 @@ body {
 
   @media (max-width: 999px) {
     width: calc(100% / 12 * 4 - 20px);
+    margin-bottom: 10px;
   }
 
   @media (max-width: 716px) {
@@ -172,6 +173,10 @@ body {
 
   &:hover .brand-story__link {
     bottom: 0;
+    transform: scale(1);
+  }
+  &:hover .brand-story__desc {
+    top: -35px;
   }
 }
 
@@ -245,11 +250,15 @@ body {
   font-size: 16px;
   font-weight: 300;
   line-height: 26px;
+  position: relative;
+  transition: .2s linear;
+  top: 0;
 }
 
 
 .brand-story__link {
 
+  transform: scale(0);
   display: inline-block;
   position: relative;
   bottom: -40px;
