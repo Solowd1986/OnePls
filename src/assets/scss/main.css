@@ -452,14 +452,26 @@ fieldset {
   height: 1px;
   margin: -1px; }
 
+.show {
+  display: block; }
+
+.hide {
+  display: none; }
+
 /*  Общие стили  */
 .header {
-  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px; }
+  padding: 10px;
+  transition: .3s linear; }
+  @media (max-width: 915px) {
+    .header {
+      position: relative; } }
 
+/*  Portfolio controls
+================================
+*/
 .portfolio-controls {
   position: absolute;
   z-index: 1;
@@ -468,6 +480,9 @@ fieldset {
   color: #969696; }
   .portfolio-controls:hover {
     color: #4a4a4a; }
+  @media (max-width: 1605px) {
+    .portfolio-controls {
+      display: none; } }
 
 .portfolio-controls__left {
   top: 20px;
@@ -477,6 +492,68 @@ fieldset {
   top: 20px;
   right: 20px; }
 
+/*=============================*/
+/*  Mobile menu
+================================
+*/
+.mobile-menu__icon {
+  display: none;
+  width: 44px;
+  background-color: transparent; }
+  @media (max-width: 915px) {
+    .mobile-menu__icon {
+      display: inline-block; } }
+
+.mobile-menu__icon::before, .mobile-menu__icon::after, .mobile-menu__icon span {
+  content: "";
+  display: block;
+  height: 5px;
+  margin: 7px 0;
+  border-radius: 3px;
+  background-color: #000000;
+  transition: all 0.2s ease-in-out; }
+
+.mobile-menu__icon--active::before {
+  transform: translateY(12px) rotate(135deg); }
+
+.mobile-menu__icon--active::after {
+  transform: translateY(-12px) rotate(-135deg); }
+
+.mobile-menu__icon--active span {
+  transform: scale(0); }
+
+.header__mobile-menu-wrapper {
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  left: -100%;
+  right: 0;
+  transition: .3s linear;
+  z-index: 2; }
+  .header__mobile-menu-wrapper--active {
+    left: 0; }
+  .header__mobile-menu-wrapper::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: #b8001f; }
+
+.header__mobile-menu-list {
+  display: flex;
+  flex-direction: column;
+  padding: 18px;
+  z-index: 2;
+  top: calc(100% + 2px);
+  background-color: #ffffff;
+  width: 100%;
+  min-height: 250px;
+  transition: .3s linear; }
+
+/*=============================*/
 .header__logo-link {
   min-width: 55px;
   max-width: 55px; }
@@ -495,6 +572,9 @@ fieldset {
   justify-content: space-around;
   justify-content: space-evenly;
   flex-grow: 1; }
+  @media (max-width: 915px) {
+    .header__nav-list {
+      display: none; } }
 
 .header__nav-item:hover .header__nav-link--arrow::after {
   border-top-color: #b8001f;
@@ -637,6 +717,84 @@ fieldset {
   font-size: 13px;
   font-weight: 300;
   color: #828282; }
+
+.modal-dialog {
+  display: none;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); }
+
+.modal-basket {
+  margin: auto;
+  position: relative;
+  text-align: center;
+  max-width: 900px;
+  width: 100%;
+  min-height: 200px;
+  background-color: lightgrey;
+  color: black;
+  max-height: 100vh;
+  overflow-y: auto; }
+
+.modal-close {
+  position: absolute;
+  font-size: 40px;
+  right: 10px;
+  transition: .3s linear;
+  cursor: pointer; }
+  .modal-close:hover {
+    transform: scale(1.2); }
+
+.modal-basket-show {
+  display: flex; }
+
+.stop-body-scroll {
+  position: fixed; }
+
+.line {
+  display: flex;
+  margin: 30px; }
+
+.line-stage {
+  flex-grow: 1;
+  padding: 25px;
+  border-bottom: 2px solid red;
+  position: relative; }
+  .line-stage::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    background-color: red;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    bottom: -6px; }
+  @media (max-width: 446px) {
+    .line-stage {
+      display: none; } }
+
+.basket__wrapper {
+  display: flex;
+  flex-wrap: wrap; }
+
+.basket-info {
+  width: 70%;
+  flex-grow: 1;
+  background-color: darkseagreen; }
+
+.basket-summary {
+  width: 30%;
+  align-self: start;
+  background-color: goldenrod;
+  min-height: 150px;
+  min-width: 210px;
+  flex-grow: 1; }
 
 .footer-wrapper {
   margin-top: auto;
