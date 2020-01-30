@@ -83,11 +83,57 @@ modalCloseBtn.addEventListener("click", function (e) {
     body.classList.remove("stop-body-scroll")
 });
 
-
-
 /*=============================*/
 
 
+
+/*  Accordeon
+================================
+*/
+(function () {
+
+
+    let accTitle = document.querySelector(".acc-start");
+    
+    let accTitleList = document.querySelectorAll(".acc-start");
+
+    let item = document.querySelector(".acc-item");
+
+    
+    let accContent = document.querySelector(".acc-cont");
+    
+    
+    
+    console.log(item);
+    
+    item.hidden;
+    
+    
+
+
+    
+
+
+    // accTitle.addEventListener("click", function (e) {
+    //
+    //     let h = accContent.offsetHeight;
+    //
+    //     if (this.matches("hide-acc")) {
+    //         accContent.classList.remove("hide-acc");
+    //         this.height = h;
+    //     } else {
+    //         accContent.classList.add("hide-acc");
+    //     }
+    //
+    // });
+
+
+
+
+
+
+})();
+/*=============================*/
 
 
 /*  Owl Carousel

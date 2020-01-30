@@ -719,7 +719,7 @@ fieldset {
   color: #828282; }
 
 .modal-dialog {
-  display: none;
+  display: flex;
   position: fixed;
   top: 0;
   z-index: 2;
@@ -787,6 +787,34 @@ fieldset {
   width: 70%;
   flex-grow: 1;
   background-color: darkseagreen; }
+
+.basket-summary__info {
+  display: flex;
+  align-items: center; }
+
+span {
+  cursor: pointer; }
+
+.minus, .plus {
+  width: 20px;
+  height: 20px;
+  background: #f2f2f2;
+  border-radius: 4px;
+  padding: 8px 5px 8px 5px;
+  border: 1px solid #ddd;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center; }
+
+input {
+  height: 34px;
+  width: 100px;
+  text-align: center;
+  font-size: 26px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  display: inline-block;
+  vertical-align: middle; }
 
 .basket-summary {
   width: 30%;
@@ -942,6 +970,23 @@ body {
 
 .promo-list__btn {
   padding: 8px 42px; }
+
+.acc-start {
+  cursor: pointer; }
+  .acc-start:hover {
+    color: #436986; }
+
+.acc-cont {
+  transition: .4s linear;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; }
+
+.hide-acc {
+  height: 0; }
+
+.show-acc {
+  transform: scale(1); }
 
 /*  История бренда
 ================================

@@ -147,7 +147,35 @@ body {
 }
 
 .accordeon {
+}
 
+.acc-item {
+
+}
+
+.acc-start {
+  cursor: pointer;
+
+  &:hover {
+    color: lighten($black-100, 30%);
+  }
+}
+
+.acc-cont {
+  transition: .4s linear;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.hide-acc {
+  //transform: scale(0);
+  height: 0;
+
+}
+
+.show-acc {
+  transform: scale(1);
 }
 
 

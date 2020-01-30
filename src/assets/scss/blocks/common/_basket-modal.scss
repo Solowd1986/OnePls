@@ -3,7 +3,7 @@
 
 
 .modal-dialog {
-  display: none;
+  display: flex;
   position: fixed;
   top: 0;
   z-index: 2;
@@ -81,10 +81,6 @@
 
 
 
-
-
-
-
 .basket__wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -96,7 +92,47 @@
   background-color: darkseagreen;
 }
 
-.basket-summary {
+
+
+
+.basket-summary__info {
+  display: flex;
+  align-items: center;
+}
+
+span {cursor:pointer; }
+
+.number{
+}
+.minus, .plus{
+  width:20px;
+  height:20px;
+  background:#f2f2f2;
+  border-radius:4px;
+  padding:8px 5px 8px 5px;
+  border:1px solid #ddd;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+}
+
+
+input {
+  height: 34px;
+  width: 100px;
+  text-align: center;
+  font-size: 26px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
+
+
+
+  .basket-summary {
   width: 30%;
   align-self: start;
   background-color: goldenrod;
