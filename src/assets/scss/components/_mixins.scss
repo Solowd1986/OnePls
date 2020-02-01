@@ -100,3 +100,9 @@
   }
 }
 
+@mixin width($cols, $max-cols: 12, $offset: 30) {
+  width: calc(100% / #{$max-cols} * #{$cols} - #{$offset#{px}});
+  margin-right: $offset / 2#{px};
+  margin-left: $offset / 2#{px};
+}
+

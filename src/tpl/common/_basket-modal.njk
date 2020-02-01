@@ -1,145 +1,157 @@
-
-
 <div class="modal-dialog">
     <div class="modal-basket">
         <span class="modal-close">&times;</span>
 
-
         <div class="line">
             <span class="line-stage">Ваша корзина</span>
             <span class="line-stage">Оплата и доставка</span>
-            <span class="line-stage">Успешное оформление</span>
+            <span class="line-stage line-stage--unactive">Успешное оформление</span>
         </div>
-        
-        
-        <div class="basket__wrapper">
 
-            <div class="basket-info">
+        <form class="basket-form" action="/index.php" name="basket-form" method="POST">
 
-                <section class="basket-delivery">
-                    <h2 class="basket-order-title">Доставка</h2>
-                    <div class="basket-card">
-                        <p class="basket-card__info">
-                            <span class="basket-card__title">Доставка по Москве</span>
-                            <span class="basket-card__pay">бесплатно</span>
-                        </p>
-                        <span class="basket-card__date">сегодня</span>
-                    </div>
+            <div class="basket__wrapper">
 
-                    <div class="basket-card">
-                        <p class="basket-card__info">
-                            <span class="basket-card__title">Самовывоз</span>
-                            <span class="basket-card__pay">бесплатно</span>
-                        </p>
-                        <span class="basket-card__address">Москва, Барклая 6, стр. 5, БЦ "Барклай Плаза" (м. Парк Победы)</span>
-                    </div>
+                <div class="basket-info">
 
-                    <div class="basket-card">
-                        <p class="basket-card__info">
-                            <span class="basket-card__title">Доставка по России</span>
-                            <span class="basket-card__pay">бесплатно</span>
-                        </p>
-                        <span class="basket-card__services"><img src="/src/assets/img/other/basket-shipping.png" alt="shipping"></span>
-                    </div>
-                </section>
+                    <section class="basket-delivery">
+                        <h2 class="basket-order-title">1. Доставка</h2>
 
-                <section class="basket-customer">
-                    <h2 class="basket-order-title">Покупатель</h2>
+                        <div class="basket-cards-wrapper">
 
-                    <form class="basket-form" action="/" name="basket-form" method="POST">
-                        <label class="basket-form__label">
-                            <input class="basket-form__input" name="name" type="text" maxlength="255" minlength="3" autocomplete="on" placeholder="Имя" required>
-                        </label>
-                        <label class="basket-form__label">
-                            <input class="basket-form__input" name="phone" type="text" maxlength="255" minlength="3" autocomplete="on" placeholder="Телефон" required>
-                        </label>
-                        <label class="basket-form__label">
-                            <input class="basket-form__input" name="email" type="email" maxlength="255" minlength="3" autocomplete="on" placeholder="Email" required>
-                        </label>
-                        <label class="basket-form__label">
-                            <input class="basket-form__input" name="address" type="text" maxlength="255" minlength="3" autocomplete="on" placeholder="Адрес" required>
-                        </label>
-                        <label class="basket-form__label"><textarea name="" id="" cols="30" rows="10" placeholder="Комментарий"></textarea></label>
-                    </form>
-                </section>
+                            <div class="basket-card basket-card--active">
+                                <div class="basket-card__info">
+                                    <span> Доставка по Москве</span>
+                                    <span class="basket-card__pay">бесплатно</span>
+                                </div>
+                                <div class="basket-card__extra">сегодня</div>
+                            </div>
 
-                <section class="basket-checkout">
-                    <h2 class="basket-order-title">Оплата</h2>
+                            <div class="basket-card">
+                                <div class="basket-card__info">
+                                    <span>Самовывоз</span>
+                                    <span class="basket-card__pay">бесплатно</span>
+                                </div>
+                                <div class="basket-card__extra">Москва, Барклая 6, стр. 5, БЦ "Барклай Плаза" (м. Парк Победы)</div>
+                            </div>
 
-                    <div class="basket-card">
-                        <p class="basket-card__info">
-                            <span class="basket-card__title">Оплата наличными</span>
-                        </p>
-                    </div>
+                            <div class="basket-card">
+                                <div class="basket-card__info">
+                                    <span>Доставка по России</span>
+                                    <span class="basket-card__pay">бесплатно</span>
+                                </div>
+                                <div class="basket-card__extra">
+                                    <img src="/src/assets/img/other/basket-shipping.png" alt="shipping">
+                                </div>
+                            </div>
+                        </div>
+                    </section>
 
-                    <div class="basket-card">
-                        <p class="basket-card__info">
-                            <span class="basket-card__title">Электронными деньгами</span>
-                            <span class="basket-card__pay">бесплатно</span>
-                        </p>
-                        <span class="basket-card__epayment"><img src="/src/assets/img/other/basket-epayment.png" alt="epayment"></span>
-                    </div>
+                    <section class="basket-customer">
 
-                    <div class="basket-card">
-                        <p class="basket-card__info">
-                            <span class="basket-card__title">Безналичный расчет (для юр. лиц)</span>
-                        </p>
-                    </div>
-                </section>
-            </div>
+                        <h2 class="basket-order-title">2. Покупатель</h2>
 
-            <div class="basket-summary">
+                        <div class="basket-form-user-data">
 
-                <h2 class="basket-summary__caption">Ваш заказ</h2>
+                            <label class="basket-form__label">
+                                <input class="basket-form__input" name="customer-name" type="text" maxlength="255" minlength="3" autocomplete="on" placeholder="Имя" required>
+                            </label>
+                            <label class="basket-form__label">
+                                <input class="basket-form__input" name="customer-phone" type="text" maxlength="255" minlength="3" autocomplete="on" placeholder="Телефон" required>
+                            </label>
+                            <label class="basket-form__label">
+                                <input class="basket-form__input" name="customer-email" type="email" maxlength="255" minlength="3" autocomplete="on" placeholder="Email" required>
+                            </label>
+                            <label class="basket-form__label basket-form__label--full-width">
+                                <input class="basket-form__input" name="customer-address" type="text" maxlength="255" minlength="3" autocomplete="on" placeholder="Адрес" required>
+                            </label>
+                            <label class="basket-form__label basket-form__label--full-width"><textarea class="basket-form__input" name="customer-comment" id="" cols="30" rows="10"
+                                                                                                       placeholder="Комментарий"></textarea></label>
 
-                <div class="basket-summary__info">
-
-                    <img class="basket-summary__img-sm" src="/src/assets/img/other/oneplus_7pro-basket.png" alt="image">
-
-                    <div class="basket-summary__info-inner-wrapper">
-
-                        <p class="basket-summary__product-title">Oneplus 7 Pro 12GB + 256GB (туманный синий)</p>
-
-                        <div class="basket-summary__counter-block">
-                            <span class="basket-summary__counter-minus">-</span>
-                            <label><input class="basket-summary__counter-value" type="text" value="1"/></label>
-                            <span class="basket-summary__counter-plus">+</span>
                         </div>
 
-                    </div>
-                    <span class="basket-summary__price--sm">44 000 р.</span>
+                    </section>
+
+                    <section class="basket-checkout">
+
+                        <h2 class="basket-order-title">3. Оплата</h2>
+
+                        <div class="basket-cards-wrapper">
+
+                            <div class="basket-card basket-card--active">
+                                <p class="basket-card__info">
+                                    <span class="basket-card__title">Оплата наличными</span>
+                                </p>
+                            </div>
+
+                            <div class="basket-card">
+                                <p class="basket-card__info">
+                                    <span class="basket-card__title">Электронными деньгами</span>
+                                    <span class="basket-card__pay">бесплатно</span>
+                                </p>
+                                <span class="basket-card__epayment"><img src="/src/assets/img/other/basket-epayment.png" alt="epayment"></span>
+                            </div>
+
+                            <div class="basket-card ">
+                                <p class="basket-card__info">
+                                    <span class="basket-card__title">Безналичный расчет (для юр. лиц)</span>
+                                </p>
+                            </div>
+
+                        </div>
+                    </section>
                 </div>
 
 
+                <div class="basket-summary">
+
+                    <h2 class="basket-summary__caption">Ваш заказ</h2>
+
+                    <div class="basket-summary__info">
 
 
-                <div class="basket-summary__delivery-block">
+                        <img class="basket-summary__img-sm" src="/src/assets/img/other/oneplus_7pro-basket.png" alt="image">
 
-                    <div class="basket-summary__delivery-fieldset">
+                        <div class="basket-summary__info-inner-wrapper">
 
-                        <span class="basket-summary__delivery-title">Сумма:</span>
+                            <p class="basket-summary__product-title">Oneplus 7 Pro 12GB + 256GB (туманный синий)</p>
+
+                            <div class="basket-summary__counter-block">
+                                <span class="basket-summary__counter basket-summary__counter-minus"></span>
+                                <label><input class="basket-summary__counter-value" type="text" name="customer-product-count" value="1"/></label>
+                                <span class="basket-summary__counter basket-summary__counter-plus"></span>
+                            </div>
+                        </div>
+
                         <span class="basket-summary__price--sm">44 000 р.</span>
                     </div>
 
-                    <div class="basket-summary__delivery-fieldset">
-                        <span class="basket-summary__delivery-title">Доставка по Москве:</span>
-                        <span class="basket-summary__price--sm">0 р.</span>
+
+
+
+                    <div class="basket-summary__delivery-block">
+                        <div class="basket-summary__delivery-fieldset">
+
+                            <span class="basket-summary__delivery-item">Сумма:</span>
+                            <span class="basket-summary__delivery-item">44 000 р.</span>
+                        </div>
+
+                        <div class="basket-summary__delivery-fieldset">
+                            <span class="basket-summary__delivery-item">Доставка по Москве:</span>
+                            <span class="basket-summary__delivery-item">0 р.</span>
+                        </div>
                     </div>
+
+                    <div class="basket-summary__checkout">
+                        <span class="basket-summary__delivery-item">Итого:</span>
+                        <span class="basket-summary__price--lg">44 000 р.</span>
+                    </div>
+
+                    <button class="btn btn-basket-order">Оформить заказ</button>
+
                 </div>
-
-
-                <div class="basket-summary__checkout">
-                    <span class="basket-summary__total">Итого:</span>
-                    <span class="basket-summary__price--lg">44 000 р.</span>
-                </div>
-
-                <button class="btn btn-basket-order">Оформить заказ</button>
-
             </div>
-        </div>
-
-
-
+        </form>
 
     </div>
 </div>
