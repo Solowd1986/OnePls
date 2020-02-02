@@ -39,13 +39,14 @@
         <section class="container product-info">
 
             <nav class="product-info__nav">
-                <a class="product-info__nav-link product-info__nav-link--active" id="#tab-features" href="">Описание</a>
-                <a class="product-info__nav-link" href="#tab-delivery">Характеристики</a>
-                <a class="product-info__nav-link" href="#tab-attributes">Доставка и оплата</a>
+                <a class="product-info__nav-link product-info__nav-link--active" data-id="#tab-features">Описание</a>
+                <a class="product-info__nav-link" data-id="#tab-attributes">Характеристики</a>
+                <a class="product-info__nav-link" data-id="#tab-delivery">Доставка и оплата</a>
             </nav>
 
 
-            <div class="product-features" id="tab-features">
+            {#  Блок особенностей  #}
+            <div class="product-features tab tab-active" id="tab-features">
                 <div class="product-features__wrapper">
                     <h2 class="product-features__title">Освободите свою музыку</h2>
                     <p class="product-features__desc">
@@ -73,7 +74,9 @@
                 </div>
             </div>
 
-            <div class="delivery-rules" id="tab-delivery">
+
+            {#  Блок доставки  #}
+            <div class="delivery-rules tab" id="tab-delivery">
 
                 <h2 class="delivery-rules__shipping-title">Доставка</h2>
                 <h3 class="delivery-rules__shipping-city">Доставка по Москве</h3>
@@ -87,7 +90,9 @@
                 <p class="delivery-rules__payment-options">WebMoney, Яндекс.Деньги, QIWI</p>
             </div>
 
-            <div class="product-attributes" id="tab-attributes">
+
+            {#  Блок характеристик  #}
+            <div class="product-attributes tab" id="tab-attributes">
 
                 <h2 class="product-attributes__table-title">Общие характеристики</h2>
 

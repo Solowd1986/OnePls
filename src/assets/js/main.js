@@ -86,6 +86,71 @@ modalCloseBtn.addEventListener("click", function (e) {
 /*=============================*/
 
 
+/*  Табы для отдельного товара
+================================
+*/
+
+
+(function () {
+
+    document.querySelectorAll(".tab").forEach((item, value) => {
+        if (value !== 0) item.hidden = true;
+    });
+
+    document.querySelectorAll(".product-info__nav-link").forEach(item => {
+        item.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            document.querySelectorAll(".product-info__nav-link").forEach(item => {
+                if (item.matches(".product-info__nav-link--active")) {
+                    item.classList.remove("product-info__nav-link--active");
+                }
+            });
+
+            document.querySelectorAll(".tab").forEach((item) => {
+                item.hidden = true;
+            });
+
+            this.classList.add("product-info__nav-link--active");
+            document.querySelector(this.dataset.id).hidden = false;
+            console.log(this.dataset);
+            
+        });
+    });
+
+})();
+
+
+/*
+================================
+*/
+
+(function () {
+
+    let conformOrderBtn = document.querySelector(".btn-basket-order");
+
+    let confirmModal = document.querySelector(".modal-confirm");
+
+    let orderImgLoad = document.createElement("img");
+    orderImgLoad.classList.add("img-loading");
+    orderImgLoad.src = "/src/assets/img/other/img-loading3.gif";
+
+    conformOrderBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        document.querySelector(".modal-basket").hidden = true;
+        document.querySelector('.modal-dialog').appendChild(orderImgLoad);
+        setTimeout(() => {
+            orderImgLoad.hidden = true;
+            confirmModal.style.display = 'block';
+        }, 1000);
+    });
+
+
+
+})();
+
+/*=============================*/
+
 
 /*  Accordeon
 ================================
@@ -102,15 +167,6 @@ modalCloseBtn.addEventListener("click", function (e) {
     
     let accContent = document.querySelector(".acc-cont");
     
-    
-    
-    console.log(item);
-    
-    item.hidden;
-    
-    
-
-
     
 
 
