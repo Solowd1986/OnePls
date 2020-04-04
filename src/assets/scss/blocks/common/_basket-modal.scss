@@ -87,6 +87,7 @@
 }
 
 
+
 .modal-close {
   position: absolute;
   right: 10px;
@@ -102,6 +103,8 @@
 }
 
 .modal-basket-show {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 

@@ -1,9 +1,6 @@
 
 
-
-
-
-/*  Mobile Menu Control
+/*  Главное меню (мобильная версия)
 ================================
 */
 
@@ -15,10 +12,7 @@ let headerBlock = document.querySelector(".header");
 let mobileMenuWrapper = document.querySelector(".header__mobile-menu-wrapper");
 
 
-
 let word = document.querySelector(".tst");
-
-
 
 
 
@@ -38,7 +32,6 @@ mobileMenuBtn.addEventListener("click", function () {
     if (this.classList.contains("mobile-menu__icon--active")) {
 
 
-
         headerBlock.style.marginBottom = mobileMenuSize + "px";
         mobileMenuWrapper.classList.add("header__mobile-menu-wrapper--active");
 
@@ -47,10 +40,9 @@ mobileMenuBtn.addEventListener("click", function () {
         mobileMenuWrapper.classList.remove("header__mobile-menu-wrapper--active");
     }
 });
-/*=============================*/
 
 
-/*  Basket
+/*  Корзина заказов
 ================================
 */
 
@@ -60,10 +52,13 @@ let modalBasketBtn = document.querySelector(".header__cart");
 let modalCloseBtn = document.querySelector(".modal-close");
 let body = document.querySelector("body");
 
+
 modalBasketBtn.addEventListener("click", function (e) {
     e.preventDefault();
+    event.returnValue = false; // IE11
     modalDialog.classList.add("modal-basket-show");
-    body.classList.add("stop-body-scroll")
+    body.classList.add("stop-body-scroll");
+    return false;
 });
 
 
@@ -83,7 +78,23 @@ modalCloseBtn.addEventListener("click", function (e) {
     body.classList.remove("stop-body-scroll")
 });
 
-/*=============================*/
+
+let conformOrderBtn = document.querySelector(".btn-basket-order");
+let confirmModal = document.querySelector(".modal-confirm");
+
+let orderImgLoad = document.createElement("img");
+orderImgLoad.classList.add("img-loading");
+orderImgLoad.src = "/src/assets/img/other/img-loading3.gif";
+
+conformOrderBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+    document.querySelector(".modal-basket").hidden = true;
+    document.querySelector('.modal-dialog').appendChild(orderImgLoad);
+    setTimeout(() => {
+        orderImgLoad.hidden = true;
+        confirmModal.style.display = 'flex';
+    }, 1000);
+});
 
 
 /*  Табы для отдельного товара
@@ -96,6 +107,7 @@ modalCloseBtn.addEventListener("click", function (e) {
     document.querySelectorAll(".tab").forEach((item, value) => {
         if (value !== 0) item.hidden = true;
     });
+
 
     document.querySelectorAll(".product-info__nav-link").forEach(item => {
         item.addEventListener("click", function (e) {
@@ -114,42 +126,11 @@ modalCloseBtn.addEventListener("click", function (e) {
             this.classList.add("product-info__nav-link--active");
             document.querySelector(this.dataset.id).hidden = false;
             console.log(this.dataset);
-            
+
         });
     });
 
 })();
-
-
-/*
-================================
-*/
-
-(function () {
-
-    let conformOrderBtn = document.querySelector(".btn-basket-order");
-
-    let confirmModal = document.querySelector(".modal-confirm");
-
-    let orderImgLoad = document.createElement("img");
-    orderImgLoad.classList.add("img-loading");
-    orderImgLoad.src = "/src/assets/img/other/img-loading3.gif";
-
-    conformOrderBtn.addEventListener("click", function (e) {
-        e.preventDefault();
-        document.querySelector(".modal-basket").hidden = true;
-        document.querySelector('.modal-dialog').appendChild(orderImgLoad);
-        setTimeout(() => {
-            orderImgLoad.hidden = true;
-            confirmModal.style.display = 'block';
-        }, 1000);
-    });
-
-
-
-})();
-
-/*=============================*/
 
 
 /*  Accordeon
@@ -159,51 +140,52 @@ modalCloseBtn.addEventListener("click", function (e) {
 
 
     let accTitle = document.querySelector(".acc-start");
-    
+
     let accTitleList = document.querySelectorAll(".acc-start");
 
     let item = document.querySelector(".acc-item");
 
-    
+
     let accContent = document.querySelector(".acc-cont");
-    
-    
-
-
-    // accTitle.addEventListener("click", function (e) {
-    //
-    //     let h = accContent.offsetHeight;
-    //
-    //     if (this.matches("hide-acc")) {
-    //         accContent.classList.remove("hide-acc");
-    //         this.height = h;
-    //     } else {
-    //         accContent.classList.add("hide-acc");
-    //     }
-    //
-    // });
-
-
-
 
 
 
 })();
 /*=============================*/
 
+(function () {
+
+    // console.log($(".block-c").each( function (i,b) {
+    //     b.val();
+    // }));
+
+
+    console.log($(".block-c").removeAttr("class"));
+
+    // $('.block-c').each( function () {
+    //     $(this).addClass('big');
+    // })
+
+    // $(".block-c").each((index, item) => {
+    //     $(item).on("click", function () {
+    //         $(this).hide(2000);
+    //     })
+    // })
+})();
+
 
 /*  Owl Carousel
 ================================
 */
-$(document).ready(function(){
+$(document).ready(function () {
     $('.owl-carousel').owlCarousel({
         items: 1,
-        lazyLoad:true,
+        lazyLoad: true,
 
-        loop:false,
-        autoplay:false,
+        loop: true,
+        autoplay: true,
 
-        autoplayTimeout:2000,
+        autoplayTimeout: 2000,
         animateOut: 'fadeOutLeft',
         animateIn: 'fadeInRight',
         dotsEach: true

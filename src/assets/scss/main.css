@@ -499,6 +499,7 @@ fieldset {
 .mobile-menu__icon {
   display: none;
   width: 44px;
+  min-width: 34px;
   background-color: transparent; }
   @media (max-width: 915px) {
     .mobile-menu__icon {
@@ -580,11 +581,14 @@ fieldset {
   border-top-color: #b8001f;
   transform: rotate(-180deg); }
 .header__nav-item:hover .header__inner-list {
-  display: flex; }
+  opacity: 1;
+  transform: scale(1);
+  height: auto;
+  overflow: initial; }
 
 .header__nav-link {
   display: block;
-  padding: 10px 0;
+  padding: 10px 15px 10px 0;
   font-size: 16px;
   font-weight: 600;
   color: #828282;
@@ -608,7 +612,12 @@ fieldset {
       transition: .2s; } }
 
 .header__inner-list {
-  display: none;
+  display: flex;
+  opacity: 0;
+  transform: scale(0);
+  height: 0;
+  overflow: hidden;
+  transition: .4s ease-out;
   position: absolute;
   right: 0;
   left: 0;
@@ -796,6 +805,8 @@ fieldset {
     color: #878787; }
 
 .modal-basket-show {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex; }
 
 .stop-body-scroll {
@@ -1244,6 +1255,7 @@ body {
 .brand-story {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   justify-content: center; }
 
 .brand-story__item {
