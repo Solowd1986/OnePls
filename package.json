@@ -15,5 +15,9 @@
     "gulp-nunjucks": "^5.0.1",
     "gulp-rename": "^1.4.0",
     "require-dir": "^1.2.0"
-  }
+  },
+  "devDependencies": {
+    "gulp-autoprefixer": "^7.0.1"
+  },
+  "browserslist": ["last 8 versions"]
 }

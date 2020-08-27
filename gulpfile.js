@@ -7,6 +7,8 @@ let nunjucks = require('gulp-nunjucks');
 let rename = require("gulp-rename");
 let requireDir = require("require-dir");
 
+const autoprefixer = require("gulp-autoprefixer");
+
 
 const path = {
     
@@ -36,6 +38,16 @@ const path = {
     },
     clean: 'dist'
 };
+
+
+gulp.task('prefix', function() {
+    return gulp.src(path.src.css)
+        .pipe(autoprefixer({
+            cascade: false
+        }))
+        .pipe(gulp.dest('dist'))
+});
+
 
 
 
