@@ -24,6 +24,24 @@ window.addEventListener("resize", function () {
     }
 });
 
+
+import createModalOverlay from "././modules/aside-project/createModal.js";
+
+document.addEventListener("click", function (evt) {
+    const cart = document.querySelector(".cart");
+    if (evt.target.classList.contains("btn")) {
+
+        const divOverlay = document.createElement("div");
+        divOverlay.classList.add("aside-overlay");
+        divOverlay.appendChild(cart);
+        document.body.appendChild(divOverlay);
+        document.body.classList.add("aside-overlay-body");
+        cart.style.display = "block";
+    }
+}, true);
+
+
+
 mobileMenuBtn.addEventListener("click", function () {
     let mobileMenuSize = mobileMenuWrapper.offsetHeight;
 
@@ -171,6 +189,20 @@ conformOrderBtn.addEventListener("click", function (e) {
     //         $(this).hide(2000);
     //     })
     // })
+    
+})();
+
+
+(function () {
+
+
+
+    
+
+    
+    
+    
+    
 })();
 
 
@@ -182,8 +214,8 @@ $(document).ready(function () {
         items: 1,
         lazyLoad: true,
 
-        loop: true,
-        autoplay: true,
+        loop: false,
+        autoplay: false,
 
         autoplayTimeout: 2000,
         animateOut: 'fadeOutLeft',

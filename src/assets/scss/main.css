@@ -306,6 +306,51 @@ template {
 /*  Миксин для добавления эффекта наведения к кнопке  */
 /*  Оверлей  */
 /*  Эффект приближения для элемента  */
+/*  Overlay
+================================
+*/
+.aside-overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  z-index: 10;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.aside-modal-close {
+  position: absolute;
+  right: 5px;
+  font-size: 36px;
+  font-weight: 900;
+  cursor: pointer; }
+  .aside-modal-close:hover {
+    transform: scale(1.1); }
+
+.inner-modal-hide {
+  display: none; }
+
+.inner-modal {
+  position: relative;
+  display: block;
+  min-height: 100px;
+  min-width: 30%;
+  max-width: 30%;
+  background-color: red; }
+
+.inner-modal-style {
+  position: relative;
+  min-height: 100px;
+  min-width: 30%;
+  max-width: 30%;
+  background-color: red; }
+
+.aside-overlay-body {
+  overflow: hidden; }
+
 .btn {
   position: relative;
   z-index: 0;
@@ -580,12 +625,22 @@ fieldset {
 .header__nav-item:hover .header__nav-link--arrow::after {
   border-top-color: #b8001f;
   transform: rotate(-180deg); }
-.header__nav-item:hover .header__inner-list {
-  opacity: 1;
-  transform: scale(1);
-  height: auto;
-  overflow: initial; }
 
+/*  Animations
+================================
+*/
+.header__nav-item:hover .header__inner-list {
+  display: flex; }
+
+.dropdown_menu-9 {
+  animation: growOut 600ms ease-in-out; }
+
+@keyframes growOut {
+  0% {
+    height: 0; }
+  100% {
+    height: 70px; } }
+/*  ================================*/
 .header__nav-link {
   display: block;
   padding: 10px 15px 10px 0;
@@ -612,12 +667,8 @@ fieldset {
       transition: .2s; } }
 
 .header__inner-list {
-  display: flex;
-  opacity: 0;
-  transform: scale(0);
-  height: 0;
-  overflow: hidden;
-  transition: .4s ease-out;
+  transition: all .5s ease;
+  display: none;
   position: absolute;
   right: 0;
   left: 0;
@@ -634,6 +685,9 @@ fieldset {
     right: 0;
     left: 0;
     background-color: #b8001f; }
+
+.list-hide {
+  display: none; }
 
 .header__inner-item:not(:last-child) {
   margin-right: 65px; }
@@ -689,6 +743,92 @@ fieldset {
 
 .slider__slider-img {
   vertical-align: bottom; }
+
+.cart {
+  position: fixed;
+  border-radius: 5px;
+  text-align: center;
+  display: block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 550px;
+  background-color: #ffffff;
+  z-index: 12;
+  padding: 10px 50px; }
+
+.cart__title {
+  margin-top: 0;
+  font-size: 24px;
+  color: #080808;
+  font-weight: 300;
+  margin-bottom: 30px;
+  position: relative;
+  text-align: center; }
+  .cart__title:after {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 40px;
+    height: 1px;
+    background-color: #999999;
+    left: 50%;
+    margin-left: -20px;
+    bottom: -12px; }
+
+.shopping-list__img {
+  display: block;
+  margin-right: 30px; }
+
+.shopping-list {
+  display: flex;
+  text-align: left;
+  margin-bottom: 20px; }
+
+.shopping-list__items > div:not(:last-child) {
+  margin-bottom: 5px; }
+
+.shopping-list__item-title {
+  font-size: 14px;
+  color: #999999; }
+
+.shopping-list__item-desc {
+  font-size: 15px;
+  font-weight: 300; }
+
+.cart__controls {
+  display: flex;
+  align-items: center; }
+
+.cart__btn-proceed {
+  font-size: 14px;
+  font-weight: 300;
+  color: #010101;
+  text-decoration: none;
+  color: #666;
+  border-bottom: 1px dotted #666;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation; }
+  .cart__btn-proceed:hover {
+    opacity: 0.8; }
+
+.cart__btn-arrange {
+  margin-left: auto;
+  padding: 5px;
+  font-weight: 300;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  white-space: nowrap;
+  border: 1px solid transparent;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-decoration: none;
+  border-radius: 2px;
+  font-size: 16px; }
 
 .promotion-badge {
   display: flex;

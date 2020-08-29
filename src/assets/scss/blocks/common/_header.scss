@@ -161,19 +161,49 @@
 
 .header__nav-item {
 
+  // Вращение стрелки при наведнии на пункт меню
   &:hover .header__nav-link--arrow::after {
     border-top-color: $red-500;
     transform: rotate(-180deg);
   }
 
+  // Появление вложенного меню при наведении на раздел
   &:hover .header__inner-list {
-    //display: flex;
-    opacity: 1;
-    transform: scale(1);
-    height: auto;
-    overflow: initial;
+  //  display: flex;
+    //opacity: 1;
+    //transform: scale(1);
+    //height: auto;
+    //overflow: initial;
   }
 }
+
+
+/*  Animations
+================================
+*/
+
+.header__nav-item {
+  // Появление вложенного меню при наведении на раздел
+  &:hover .header__inner-list {
+    display: flex;
+  }
+}
+
+.dropdown_menu-9 {
+  animation: growOut 600ms ease-in-out;
+}
+
+@keyframes growOut {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 70px;
+  }
+}
+
+/*  ================================*/
+
 
 
 .header__nav-link {
@@ -213,13 +243,13 @@
 
 
 .header__inner-list {
-
-  display: flex;
-  opacity: 0;
-  transform: scale(0);
-  height: 0;
-  overflow: hidden;
-  transition: .4s ease-out;
+  transition: all .5s ease;
+  display: none;
+  //opacity: 0;
+  //transform: scale(0);
+  //height: 0;
+  //overflow: hidden;
+  //transition: .4s ease-out;
 
 
   position: absolute;
@@ -241,6 +271,12 @@
     background-color: $red-500;
   }
 }
+
+.list-hide {
+  display: none;
+}
+
+
 
 
 .header__inner-item {

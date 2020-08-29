@@ -21,7 +21,7 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <link rel="stylesheet" href="/src/assets/scss/vendor/owl.theme.default.css">
     <link rel="stylesheet" href="/src/assets/scss/vendor/owl.carousel.css">
     <link rel="stylesheet" href="/src/assets/scss/vendor/animate-for-owl-carousel.css">
@@ -53,8 +53,6 @@
     </div>
 
 
-
-
     <a class="header__logo-link" href="/">
 
         <svg class="header__logo-img" width="55" height="55" fill="red" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 85 80">
@@ -65,10 +63,8 @@
 
     <ul class="header__nav-list">
         <li class="header__nav-item">
-
-            <a class="header__nav-link" href="">Смартфоны<span class="header__nav-link--arrow"></span></a>
-
-            <ul class="header__inner-list">
+            <a class="header__nav-link " href="">Смартфоны<span class="header__nav-link--arrow"></span></a>
+            <ul class="header__inner-list list-hide">
 
                 <li class="header__inner-item">
                     <a class="header__inner-link" href="">
@@ -113,10 +109,11 @@
 
             </ul>
         </li>
+
+
+
         <li class="header__nav-item">
-
             <a class="header__nav-link" href="">Аксессуары<span class="header__nav-link--arrow"></span></a>
-
             <ul class="header__inner-list">
 
                 <li class="header__inner-item">
@@ -153,10 +150,9 @@
                 </li>
             </ul>
         </li>
+
         <li class="header__nav-item">
-
             <a class="header__nav-link" href="">Гаджеты<span class="header__nav-link--arrow"></span></a>
-
             <ul class="header__inner-list">
 
                 <li class="header__inner-item">
@@ -347,8 +343,6 @@
 
                         <span class="basket-summary__price--sm">44 000 р.</span>
                     </div>
-
-
 
 
                     <div class="basket-summary__delivery-block">
@@ -753,8 +747,38 @@
 
 </svg>
 
+    
+<div class="cart" style="display: none">
+    <span>&nbsp</span>
+    <h2 class="cart__title">Товар добавлен в корзину</h2>
+    <div class="shopping-list">
+        <img class="shopping-list__img" src="https://fakeimg.pl/100x79/282828/?text=IMG" alt="generic_img">
+        <div class="shopping-list__items">
+            <div>
+                <span class="shopping-list__item-title">Товар: </span>
+                <span class="shopping-list__item-desc">OnePlus 8 Pro 8GB + 128GB</span>
+            </div>
+            <div>
+                <span class="shopping-list__item-title">Цена: </span>
+                <span class="shopping-list__item-desc">62 990 р.</span>
+            </div>
+            <div>
+                <span class="shopping-list__item-title">Цвет: </span>
+                <span class="shopping-list__item-desc">Ледяной зеленый</span>
+            </div>
+            <div>
+                <span class="shopping-list__item-title">Количество: </span>
+                <span class="shopping-list__item-desc">1 шт.</span>
+            </div>
+        </div>
+    </div>
+    <div class="cart__controls">
+        <a class="cart__btn-proceed" href="#">Продолжить покупки</a>
+        <a class="btn cart__btn-arrange" href="#">Оформить заказ</a>
+    </div>
+</div>
 
     <script src="/src/assets/js/vendor/owl.carousel.js"></script>
-    <script src="/src/assets/js/main.js"></script>
+    <script type="module" src="/src/assets/js/main.js"></script>
 </body>
 </html>
