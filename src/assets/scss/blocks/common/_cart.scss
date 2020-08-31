@@ -37,6 +37,20 @@
   }
 }
 
+.hide-modal {
+  display: none;
+}
+
+
+.close-modal {
+  font-size: 16px;
+  color: black;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+
 
 .shopping-list__img {
   display: block;

@@ -19,8 +19,8 @@ const createModalOverlay = (selectorOpenModal,
                             classHideModal,
                             classBodyFixed) => {
 
-    let modal = document.querySelector(selectorModal);
     let openModalBtn = document.querySelector(selectorOpenModal);
+    let modal = document.querySelector(selectorModal);
 
     if (modal !== null && openModalBtn !== null) {
 
@@ -38,8 +38,8 @@ const createModalOverlay = (selectorOpenModal,
 
 
             /*  С помощью делегирования перехватываем клик на сам оверлей и на кнопку закрытия модального окна.
-                Заметь, что ловим событие на спуске, это потому, что кнопка закрытия окна внутри него, а само окно запрещает всплытие,
-                поэтому перехватить такой клик можно только на этапе спуска.
+                Заметь, что ловим событие на спуске, это потому, что кнопка закрытия окна внутри него, а само окно запрещает
+                всплытие, поэтому перехватить такой клик можно только на этапе спуска.
             ================================
             */
             overlay.addEventListener("click", (evt) => {
@@ -67,6 +67,10 @@ const createModalOverlay = (selectorOpenModal,
             document.body.classList.add(classBodyFixed);
             document.body.appendChild(overlay);
             overlay.appendChild(modal);
+
+
+
+
         });
     }
 };

@@ -15,6 +15,37 @@ let mobileMenuWrapper = document.querySelector(".header__mobile-menu-wrapper");
 let word = document.querySelector(".tst");
 
 
+function getRandom() {
+    return  new Promise(resolve => {
+        setTimeout(() => {
+            resolve("data");
+        }, 4000)
+    })
+}
+
+
+async function getData() {
+    let res = await getRandom();
+    console.log(res);
+    return res;
+}
+
+getData().then(r => console.log(r));
+
+
+
+import createModalOverlay from "./modules/aside-project/createModal.js";
+
+createModalOverlay(
+    ".promo-list__btn",
+    ".cart",
+    "aside-overlay",
+    "close-modal",
+    "hide-modal",
+    "aside-overlay-body",
+);
+
+
 
 window.addEventListener("resize", function () {
     if (window.innerWidth > 915) {
@@ -25,20 +56,19 @@ window.addEventListener("resize", function () {
 });
 
 
-import createModalOverlay from "././modules/aside-project/createModal.js";
 
-document.addEventListener("click", function (evt) {
-    const cart = document.querySelector(".cart");
-    if (evt.target.classList.contains("btn")) {
-
-        const divOverlay = document.createElement("div");
-        divOverlay.classList.add("aside-overlay");
-        divOverlay.appendChild(cart);
-        document.body.appendChild(divOverlay);
-        document.body.classList.add("aside-overlay-body");
-        cart.style.display = "block";
-    }
-}, true);
+// document.addEventListener("click", function (evt) {
+//     const cart = document.querySelector(".cart");
+//     if (evt.target.classList.contains("btn")) {
+//
+//         const divOverlay = document.createElement("div");
+//         divOverlay.classList.add("aside-overlay");
+//         divOverlay.appendChild(cart);
+//         document.body.appendChild(divOverlay);
+//         document.body.classList.add("aside-overlay-body");
+//         cart.style.display = "block";
+//     }
+// }, true);
 
 
 
