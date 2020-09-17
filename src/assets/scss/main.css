@@ -306,6 +306,17 @@ template {
 /*  Миксин для добавления эффекта наведения к кнопке  */
 /*  Оверлей  */
 /*  Эффект приближения для элемента  */
+/*  Блок миксинов для адаптивной сетки
+================================
+*/
+/*  Генеринруем свойства для нужного количества элементов, сочетается с медиа-запросами.
+
+    $item-columns - количество колонок, для которых генерируем динамическую ширину
+    $columns - общее количество колонок в блоке, от которых пойдет расчет
+    $offset - отступы между колонками, общее число пикселей - 30, а значит - с каждой стороны по 15px
+    $margin-bottom - отступ снизу, чтобы каждаая линия элементов не прилегала к нижеследующей
+================================
+*/
 /*  Overlay
 ================================
 */
@@ -1292,6 +1303,117 @@ body {
   font-family: "Open Sans", "Arial", sans-serif;
   font-size: 16px; }
 
+/*  Базовый контейнер для блоков, не центруется, тянется до краев экрана (максимум взят за 2133px), доавлен padding
+    для того, чтобы не мобильных текст не прижимался к краям, до мобильных разрешений padding не влияет
+    Добавлятся блокам div или section, которые идут до краев экрана.
+================================
+*/
+.container-outer {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px; }
+
+/*  Обертка-центровщик. Добавлятся блокам, которые занимают фиксированную максимальную ширину.
+================================
+*/
+.wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto; }
+
+.categorie-item-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px; }
+
+.categorie-item {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: calc(100% / 12 * 4 - 30px);
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 30px; }
+  .categorie-item > *:not(:last-child) {
+    margin-bottom: 10px; }
+
+.categorie-item--other {
+  cursor: pointer;
+  background-color: #fff;
+  transition: .25s;
+  width: calc(100% / 12 * 3 - 30px);
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 30px; }
+  .categorie-item--other img {
+    align-self: center; }
+
+.categorie-title {
+  background-color: #f9f9f9;
+  padding: 20px 10px;
+  margin-bottom: 30px; }
+  .categorie-title > div > h1 {
+    font-size: 22px;
+    margin: 0;
+    padding: 0;
+    color: #636E75;
+    font-weight: 400; }
+
+.item-buy-btn {
+  padding: 10px 30px; }
+
+.categorie-desc-text {
+  font-size: 14px;
+  line-height: 1.7;
+  font-weight: 300;
+  color: #101920; }
+  .categorie-desc-text:last-of-type {
+    font-size: 16px;
+    font-weight: 400; }
+
+.container-outer--no-offset {
+  padding-left: 0;
+  padding-right: 0; }
+  .container-outer--no-offset > div:first-child {
+    height: 200px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    position: relative; }
+    .container-outer--no-offset > div:first-child > h1 {
+      display: block;
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+      padding-left: 10px;
+      padding-right: 10px;
+      color: #ffffff;
+      text-align: center;
+      font-weight: 300;
+      margin-top: 0;
+      margin-bottom: 0; }
+
+.categorie-img-wrapper {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  transition: all .6s ease; }
+  .categorie-img-wrapper > img:first-child {
+    transition: all .6s ease;
+    position: relative;
+    right: -50px; }
+  .categorie-img-wrapper > img:last-child {
+    transition: all .6s ease;
+    position: relative;
+    left: -35px; }
+  .categorie-img-wrapper:hover > img:first-child {
+    transform: translateX(-20px); }
+  .categorie-img-wrapper:hover > img:last-child {
+    transform: translateX(18px); }
+
 .promo-wrapper {
   margin-bottom: 100px;
   padding-bottom: 10px;
@@ -1350,6 +1472,10 @@ body {
   .promo-list__tag--not-in-stock {
     text-decoration: line-through;
     background-color: #828282; }
+  .promo-list__tag--categorie {
+    padding: 2px 5px;
+    font-size: 10px;
+    align-self: center; }
 
 .promo-list__link {
   margin-bottom: 10px;

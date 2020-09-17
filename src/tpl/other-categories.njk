@@ -1,0 +1,27 @@
+{% extends "common/_base-layout.njk" %}
+
+{% block content %}
+
+    <div class="container-outer container-outer--no-offset">
+        <div class="categorie-other">
+            <img src="/src/assets/img/other/category_6_1920_375.jpg" alt="image">
+            <h1>Аксессуары</h1>
+        </div>
+        <div class="wrapper">
+            <ul class=" categorie-item-list">
+                {% for i in range(0, 12)%}
+                    <li class="item-phone categorie-item categorie-item--other">
+                        <span class="promo-list__tag promo-list__tag--categorie">В наличии</span>
+                        <img class="phone-preview-lg gallery-img-first" src="/src/assets/img/categories/accessoires-categorie/oneplus_7t_silicone_red_380_380-crop.png" alt="image">
+                        <span class="item-title categorie-desc-text">Силиконовый защитный чехол для OnePlus 7T красный</span>
+                        <span class="item-price categorie-desc-text">62 990 р</span>
+                        <button class="item-buy-btn btn">Купить</button>
+                    </li>
+                {%- endfor %}
+
+            </ul>
+        </div>
+
+    </div>
+
+{% endblock %}

@@ -2,25 +2,33 @@
 
 {% block content %}
 
-    <div class="container">
-        <ul class="phone-series-gallery list-phone">
+    <div class="container-outer">
+        <div class="categorie-title">
+            <div class="wrapper">
+                <h1>OnePlus 8</h1>
+            </div>
+        </div>
+        <div class="wrapper">
+            <ul class=" categorie-item-list">
+                {% for i in range(0, 12)%}
+                    <li class="item-phone categorie-item">
+                        <span class="promo-list__tag promo-list__tag--categorie">В наличии</span>
 
-            {% for i in range(0, 6)%}
+                        <div class="categorie-img-wrapper">
+                            <img class="phone-preview-lg gallery-img-first" src="src/assets/img/categories/phone-categories/8_pro_onyx_black_1_180_367.png" alt="image">
+                            <img class="phone-preview-lg gallery-img-first" src="src/assets/img/categories/phone-categories/8_pro_onyx_black_2_180_367.png" alt="image">
+                        </div>
 
-            <li class="item-phone">
-                <span class="item-tag">В наличии</span>
-                <a class="phone-series-preview" href="/item.html">
-                    <img class="phone-preview-lg gallery-img-first" src="/assets/img/one-side-1-compressor.png" alt="image">
-                    <img class="phone-preview-lg gallery-img-second" src="/assets/img/one-side-2-compressor.png" alt="image">
-                </a>
-                <span class="item-title">Oneplus 7 Pro 8GB + 256GB (туманный синий)</span>
-                <span class="item-price">44 000</span>
-                <button class="item-buy-btn">Купить</button>
-            </li>
+                        <span class="item-title categorie-desc-text">Черный оникс</span>
+                        <span class="item-title categorie-desc-text">8GB ОЗУ + 128GB внутренней</span>
+                        <span class="item-price categorie-desc-text">62 990 р</span>
+                        <button class="item-buy-btn btn">Купить</button>
+                    </li>
+                {%- endfor %}
 
-            {%- endfor %}
+            </ul>
+        </div>
 
-        </ul>
     </div>
 
 {% endblock %}
